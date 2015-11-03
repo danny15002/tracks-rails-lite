@@ -119,11 +119,6 @@ class SQLObject
     question_marks = ['?'] * attributes.keys.length
     question_marks = '(' + question_marks.join(', ') + ')'
 
-    # col_values = col_name.map do |col|
-    #   send("#{col}")
-    # end
-    # puts "column values are: #{col_values}"
-
     a_values = attribute_values
 
     data = DBConnection.execute(<<-SQL, a_values ).first
